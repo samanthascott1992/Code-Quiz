@@ -3,3 +3,14 @@ h1 {
    }
 
 
+.jumbotron {
+    text-align: center;
+
+}
+
+.startBtn {
+    border: 30px black;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+}
