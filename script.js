@@ -1,35 +1,64 @@
-var gameTimer = 20000;
+var gameTimer = questions.length * 20;
+var score = 0;
+var nextQuestIndex = 0;
 
-// function timerTick() {
-// for (var i = 0; i < gameTimer; i--) {
-//  ;
+var questions =
+    [
+        {
+            question: "In which brackets do you index an array:",
+            choices: ["()", "<>", "[]", "{}"],
+            answer: "[]"
+        },
 
+        {
+            question: "The first item of an array has an index of:",
+            choices: ["1", "3", "2", "0"],
+            answer: "0"
+        },
 
-// }
-// };
-var q1 = "When making a selection in jquery, you use:"
-var q2 = "The <p> is to denote the beginning of a new section"
-var q3 = "The first item in an array has an index of:"
-var q4 = "In which type of brackets do you use to access an array item?"
+        {
+            question: "Using jQuery, how do you denote selection?",
+            choices: ["$()", "[]", "{}", "<>"],
+            answer: "$()"
+        },
 
-var questionList = [q1, q2, q3. q4 ];
-
-
-
+        {
+            question: "What is the most important header tag?",
+            choices: ["h4", "h1", "h3", "h2"],
+            answer: "h1"
+        },
+    ];
 
 
 function startGame() {
- for (var i = 0; i < questionList.length; i++) {
-    document.getElementById("question").innerHTML = questionList[i][0];
-    }
+    var startScreen = document.getElementById("start-screen")
+
+
 
 };
 
 
-    // document.getElementById("answerA").innerHTML = answerA
-    // document.getElementById("answerB").innerHTML = answerB
-    // document.getElementById("answerC").innerHTML = answerC
-    // document.getElementById("answerD").innerHTML = answerD
+function questionTime() {
+
+var nextQuestion = questions[nextQuestIndex]
+var titleEl = document.getElementById("question")
+titleEl.textContent = nextQuestion.question;
+choicesEl.innerHTML = "";
+
+    currentQuestion.choices.forEach(function (choice, i) {
+        var choiceNode = document.createElement("button");
+        choiceNode.setAttribute("class", "choice");
+        choiceNode.setAttribute("value", choice);
+        choiceNode.textContent = i + 1 + ". " + choice;
+        choiceNode.onclick = questionClick;
+        choicesEl.appendChild(choiceNode);
+    }
+});
+
+
+    
+    startBtn.addEventListener("click", startQuiz);
+    submitBtn.onclick = viewHighScore;
 
 
 
@@ -37,19 +66,6 @@ function startGame() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// var score = 0;
 
 // for (var i = 0; i < questionList.length; i++) {
 //  var answer = confirm(questions[i].q);

@@ -9,7 +9,7 @@
 <body>
   <script src="script.js"> </script>
 
-<div class="jumbotron">
+<div class="jumbotron" id="start-screen">
     <h1 class="display-4">Coding Quiz</h1>
     <p class="lead">This is a simple quiz to test your coding knowledge!</p>
     
@@ -17,11 +17,22 @@
   </div>
 
 
-<div id="question"></div>
-<div id="answerA"></div>
-<div id="answerB"></div>
-<div id="answerC"></div>
-<div id="answerD"></div>
+<div id="question" class="hide">
+  <h1 id="question-title"></h1>
+  <div id="choices">
+   <div id="choices" class="choices"></div>
+</div>
+
+<div id="game-over" class="hide">
+  <h1>Game Over</h1>
+  <p>Your score was <span id="end-score"></span></p>
+  <p>
+    Input your initials to save your score:
+    <br>
+    <input type="text" id="initials"/>
+    <button id="submit">Submit</button>
+  </p>
+</div>
 
 
 
