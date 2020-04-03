@@ -1,7 +1,3 @@
-var gameTimer = questions.length * 20;
-var score = 0;
-var nextQuestIndex = 0;
-
 var questions =
     [
         {
@@ -29,52 +25,33 @@ var questions =
         },
     ];
 
+var gameTimer = questions.length * 20;
+var score = 0;
+var qIndex = 0;
 
 function startGame() {
-    var startScreen = document.getElementById("start-screen")
+    var startScreen = document.getElementById("start-screen");
+    startScreen.style = "display: none";
+    
+    var questionToAsk = questions[qIndex];
+    var choicesToAnswer = questionToAsk.choices;
+    var answer = questionToAsk.answer;
+    questionToAsk = questionToAsk.question;
 
+    var question = document.getElementById("question");
+    var choices = document.getElementById("choices");
 
+    
+    choices.innerHTML = choicesToAnswer;
+    //TODO: for each choice in choicesToAnswer create a button element, append child like below
 
+    question.innerHTML = questionToAsk;
+
+    question.style = "display: inline";
+    choices.style = "display: inline";
 };
 
 
-function questionTime() {
-
-var nextQuestion = questions[nextQuestIndex]
-var titleEl = document.getElementById("question")
-titleEl.textContent = nextQuestion.question;
-choicesEl.innerHTML = "";
-
-    currentQuestion.choices.forEach(function (choice, i) {
-        var choiceNode = document.createElement("button");
-        choiceNode.setAttribute("class", "choice");
-        choiceNode.setAttribute("value", choice);
-        choiceNode.textContent = i + 1 + ". " + choice;
-        choiceNode.onclick = questionClick;
-        choicesEl.appendChild(choiceNode);
-    }
-});
-
-
-    
-    startBtn.addEventListener("click", startQuiz);
-    submitBtn.onclick = viewHighScore;
 
 
 
-
-
-
-
-
-// for (var i = 0; i < questionList.length; i++) {
-//  var answer = confirm(questions[i].q);
-// //    if ((answer === true && questions[i].a === "t") ||
-// //       (answer === false && questions[i].a === "f")) {
-//       score++;
-//       alert("Correct!");
-//     }
-//     else {
-//       alert("Wrong!");
-//     }
-//   }
