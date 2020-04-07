@@ -15,6 +15,6 @@ h1 {
     color: white;
 }
 
-.hide {
-    display: none;
+#game-over, #questionArea {
+    visibility: hidden;
 }

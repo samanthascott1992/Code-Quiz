@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link href="style.css" rel="stylesheet"> 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </head>
 <body>
   <script src="script.js"> </script>
@@ -13,20 +15,27 @@
     <h1 class="display-4">Coding Quiz</h1>
     <p class="lead">This is a simple quiz to test your coding knowledge!</p>
     
-      <a class="startBtn" href="#" role="button" onclick="startGame()">Start</a>
+    <a class="startBtn" href="#" role="button" onclick="nextQuestion()">Start</a>
+</div>
+
+
+<div id="questionArea" class="jumbotron">
+  <div id="timer"></div>
+   <p id="question"> </p>
+   <div id="choices">
+    <button class="questionChoice" type="button" id="answerA" value="a"></button>
+    <button class="questionChoice" type="button" id="answerB" value="b"></button>
+    <button class="questionChoice" type="button" id="answerC" value="c"></button>
+    <button class="questionChoice" type="button" id="answerD" value="d"></button>
   </div>
-
-
-<div id="question" class="hide">
-   
 </div> 
 
 <div id="choices" class="choices"></div>
 
 
-<div id="game-over" class="hide">
+<div id="game-over" class="jumbotron">
   <h1>Game Over</h1>
-  <p>Your score was <span id="end-score"></span></p>
+  <p>Incredible! You received a <span id="end-score"></span>!</p>
   <p>
     Input your initials to save your score:
     <br>
